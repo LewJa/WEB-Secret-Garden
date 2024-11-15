@@ -25,10 +25,16 @@ body {
 }
 
 #net {
-    height: 600px;
+    height: 200px;
     width: auto;
-    position: absolute;
+    position: relative;
+    transform: translate(-20%, -20%);
+    z-index: 5;
+}
 
+#follow {
+    position: absolute;
+    text-align: center;
 }
 
 .apple {
@@ -41,7 +47,7 @@ body {
     position: fixed;
     bottom: 20px;
     left: 50%;
-
+    width: 40%;
 }
 
 .basket {
@@ -49,13 +55,13 @@ body {
     position: fixed;
     bottom: 20px;
     left: 20%;
-
 }
 
 
 body {
     margin: 0px;
     background-image: url("../images/grass.png");
+    background-color: rgb(186, 221, 235);
     background-attachment: fixed;
     background-repeat: repeat-x;
     background-position: bottom;
