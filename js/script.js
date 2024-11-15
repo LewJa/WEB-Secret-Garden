@@ -25,3 +25,10 @@ function createWaterDrop(){
          $(this).remove();
     });
 }
+
+$(document).mousemove(function(e) {
+    $("#follow").css({
+        left: e.pageX,
+        top: e.pageY
+    });
+});
