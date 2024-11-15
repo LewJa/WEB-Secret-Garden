@@ -38,3 +38,34 @@ $(document).mousemove(function (e) {
         top: e.pageY
     });
 });
+
+function flyaround(IdRef) {
+    var x = $(window).width() - $(IdRef).width();
+    var y = $(window).height() - $(IdRef).height();
+
+    var maxX = Math.floor(Math.random() * x);
+    var maxY = Math.floor(Math.random() * y);
+    $(IdRef).animate({top: maxY, left: maxX}, "slow", function() {
+        flyaround(IdRef)}
+    );
+}
+
+function direction(IdRef) {
+    //in this place soon will be the code for the direction of the butterfly (and the net possibly)
+}
+    
+
+$(document).ready(function() {
+    $("#butterfly").animate({left: "+=200"},"slow",function() {flyaround(this)});
+});
+/*
+$("#butterfly").mouseover(function () {
+    var x = $(window).width() - $("#butterfly").width();
+    var y = $(window).height() - $("#butterfly").height();
+
+    var maxX = Math.floor(Math.random() * x);
+    var maxY = Math.floor(Math.random() * y);
+   
+    $(this).animate({left: maxX, top: maxY}, "slow");
+});
+*/
