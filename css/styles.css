@@ -31,6 +31,7 @@ body {
     position: relative;
     transform: translate(-20%, -20%);
     z-index: 5;
+    pointer-events: none;
 }
 
 #follow {

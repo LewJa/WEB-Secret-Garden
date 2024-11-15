@@ -32,9 +32,9 @@ function createWaterDrop(){
     });
 }
 
-// $(document).mousemove(function(e) {
-//     $("#follow").css({
-//         left: e.pageX,
-//         top: e.pageY
-//     });
-// });
+ $(document).mousemove(function(e) {
+     $("#follow").offset({
+         left: e.pageX,
+         top: e.pageY
+     });
+ });
