@@ -21,7 +21,8 @@ body {
  .waterdrop { /* added height and position */
     width: 20px;
     height: 40px;
-    position: relative;
+    position: absolute;
+    overflow: hidden;
 }
 
 #net {
