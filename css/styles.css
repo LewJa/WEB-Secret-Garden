@@ -3,9 +3,8 @@ body {
     height: 100%;
 }
 
-
 #butterfly {
-    height: 200px;
+    height: 20%;
     width: auto;
     position: absolute;
 }
@@ -16,7 +15,6 @@ body {
     bottom: 30%;
     left: 40%;
 }
-
 
  .waterdrop { /* added height and position */
     width: 20px;
@@ -53,7 +51,7 @@ body {
 }
 
 .basket {
-    width: 200px;
+    width: 10%;
     position: fixed;
     bottom: 20px;
     left: 20%;
