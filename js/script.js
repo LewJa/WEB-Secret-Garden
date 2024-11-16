@@ -33,39 +33,71 @@ function createWaterDrop() {
 }
 
 $(document).mousemove(function (e) {
+    setDirection("#follow", e.pageX); // Flips the net - Jan
     $("#follow").offset({
         left: e.pageX,
         top: e.pageY
     });
 });
 
-function flyaround(IdRef) {
+// <Jan>
+
+$(document).ready(function() {
+    flyAround("#butterfly");
+    flyAway("#butterfly");
+});
+
+function flyAround(IdRef) {
     var x = $(window).width() - $(IdRef).width();
     var y = $(window).height() - $(IdRef).height();
 
     var maxX = Math.floor(Math.random() * x);
     var maxY = Math.floor(Math.random() * y);
+
+    setDirection(IdRef, maxX);
+
     $(IdRef).animate({top: maxY, left: maxX}, "slow", function() {
-        flyaround(IdRef)}
-    );
+        flyAround(IdRef);
+    });
 }
 
-function direction(IdRef) {
-    //in this place soon will be the code for the direction of the butterfly (and the net possibly)
+function setDirection(IdRef, newX) {
+    var currentX = $(IdRef).offset().left;
+    if (newX > currentX) { //facing right
+        if (IdRef === "#follow") { 
+            $("#net").css("transform", "scaleX(-1) translate(70%, -20%)");
+        } else {
+            $(IdRef).css("transform", "scaleX(-1)");
+        }
+    } else { //face left
+        if (IdRef === "#follow") {
+            $("#net").css("transform", "scaleX(1) translate(-20%, -20%)");
+        } else {
+            $(IdRef).css("transform", "scaleX(1)");
+        }
+    }
 }
-    
 
-$(document).ready(function() {
-    $("#butterfly").animate({left: "+=200"},"slow",function() {flyaround(this)});
-});
-/*
-$("#butterfly").mouseover(function () {
-    var x = $(window).width() - $("#butterfly").width();
-    var y = $(window).height() - $("#butterfly").height();
+function flyAway(IdRef) {
+    $(document).mousemove(function(e) {
+        var mouseX = e.pageX;
+        var mouseY = e.pageY;
+        var butterflyX = $(IdRef).offset().left + $(IdRef).width() / 2;
+        var butterflyY = $(IdRef).offset().top + $(IdRef).height() / 2;
+        var distance = Math.sqrt(Math.pow(mouseX - butterflyX, 2) + Math.pow(mouseY - butterflyY, 2));
 
-    var maxX = Math.floor(Math.random() * x);
-    var maxY = Math.floor(Math.random() * y);
-   
-    $(this).animate({left: maxX, top: maxY}, "slow");
-});
-*/
+        if (distance < 100) { // If mouse is within 100px
+            var x = $(window).width() - $(IdRef).width();
+            var y = $(window).height() - $(IdRef).height();
+
+            var maxX = Math.floor(Math.random() * x);
+            var maxY = Math.floor(Math.random() * y);
+
+            setDirection(IdRef, maxX);
+
+            $(IdRef).stop().animate({top: maxY, left: maxX}, "fast", function() {flyAround(IdRef)});
+        }
+    });
+}
+
+// </Jan>
