@@ -1,4 +1,4 @@
-//MAKE THE MAGIC HAPPEN
+// <Yelyzaveta>
 $("#wateringcan").on("click", function () {
     $(this).toggleClass("tilted");
 });
@@ -32,6 +32,8 @@ function createWaterDrop() {
     });
 }
 
+
+// <Teo>
 $(document).mousemove(function (e) {
     setDirection("#follow", e.pageX); // Flips the net - Jan
     $("#follow").offset({
@@ -40,9 +42,32 @@ $(document).mousemove(function (e) {
     });
 });
 
+$(document).ready(function () {
+    $('#dayButtonId').click(function () {
+        $('body').css({
+            'background-color': '#baddeb'
+        });
+    });
+
+    $('#nightButtonId').click(function () {
+        $('body').css({
+            'background-color': '#364044'
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#dayButtonId").click(function () {
+        $("body").animate({ 'background-color': '#baddeb' });
+    });
+    $("#nightButtonId").click(function () {
+        $("body").animate({ 'background-color': '#364044' });
+    });
+});
+
 // <Jan>
 
-$(document).ready(function() {
+$(document).ready(function () {
     flyAround("#butterfly");
     flyAway("#butterfly");
 });
@@ -56,7 +81,7 @@ function flyAround(IdRef) {
 
     setDirection(IdRef, maxX);
 
-    $(IdRef).animate({top: maxY, left: maxX}, "slow", function() {
+    $(IdRef).animate({ top: maxY, left: maxX }, "slow", function () {
         flyAround(IdRef);
     });
 }
@@ -64,7 +89,7 @@ function flyAround(IdRef) {
 function setDirection(IdRef, newX) {
     var currentX = $(IdRef).offset().left;
     if (newX > currentX) { //facing right
-        if (IdRef === "#follow") { 
+        if (IdRef === "#follow") {
             $("#net").css("transform", "scaleX(-1) translate(70%, -20%)");
         } else {
             $(IdRef).css("transform", "scaleX(-1)");
@@ -79,7 +104,7 @@ function setDirection(IdRef, newX) {
 }
 
 function flyAway(IdRef) {
-    $(document).mousemove(function(e) {
+    $(document).mousemove(function (e) {
         var mouseX = e.pageX;
         var mouseY = e.pageY;
         var butterflyX = $(IdRef).offset().left + $(IdRef).width() / 2;
@@ -95,9 +120,8 @@ function flyAway(IdRef) {
 
             setDirection(IdRef, maxX);
 
-            $(IdRef).stop().animate({top: maxY, left: maxX}, "fast", function() {flyAround(IdRef)});
+            $(IdRef).stop().animate({ top: maxY, left: maxX }, "fast", function () { flyAround(IdRef) });
         }
     });
 }
-
 // </Jan>

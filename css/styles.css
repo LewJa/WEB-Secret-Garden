@@ -1,6 +1,27 @@
 html,
 body {
     height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+p {
+    padding: 20px;
+    max-width: 200px;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: 1px solid #2e573a;
+    background-color: #7ead8d;
+    color: black;
+    text-align: left;
+    margin-top: 20px;
+    z-index: 5;
 }
 
 #butterfly {
@@ -17,7 +38,8 @@ body {
     left: 40%;
 }
 
- .waterdrop { /* added height and position */
+.waterdrop {
+    /* added height and position */
     width: 20px;
     height: 40px;
     position: absolute;
@@ -28,8 +50,7 @@ body {
     height: 200px;
     width: auto;
     position: relative;
-    transform: translate(-20%, -20%);
-    z-index: 5;
+    z-index: 4;
     pointer-events: none;
 }
 
@@ -58,11 +79,9 @@ body {
     left: 20%;
 }
 
-
 body {
-    margin: 0px;
     background-image: url("../images/grass.png");
-    background-color: rgb(186, 221, 235);
+    background-color: #baddeb;
     background-attachment: fixed;
     background-repeat: repeat-x;
     background-position: bottom;
@@ -70,7 +89,7 @@ body {
 }
 
 /* My code */
-.tilted{
-     transform: rotate(-20deg); /*counterclockwise tilt */
+.tilted {
+    transform: rotate(-20deg);
+    /*counterclockwise tilt */
 }
-
