@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/* 
 button {
     padding: 10px 15px;
     font-size: 16px;
@@ -22,13 +22,20 @@ p {
     text-align: left;
     margin-top: 20px;
     z-index: 5;
-}
+} */
 
 #butterfly {
     height: 15%;
     width: auto;
     position: absolute;
-    z-index: 1;
+    z-index: 9;
+}
+
+#firefly {
+    height: 15%;
+    width: auto;
+    position: absolute;
+    z-index: 10;
 }
 
 #wateringcan {
@@ -36,6 +43,7 @@ p {
     position: fixed;
     bottom: 30%;
     left: 40%;
+    z-index: 6;
 }
 
 .waterdrop {
@@ -44,13 +52,14 @@ p {
     height: 40px;
     position: absolute;
     overflow: hidden;
+    z-index: 7;
 }
 
 #net {
     height: 200px;
     width: auto;
     position: relative;
-    z-index: 4;
+    z-index: 10;
     pointer-events: none;
 }
 
@@ -63,6 +72,7 @@ p {
     height: 50px;
     width: auto;
     position: absolute;
+    z-index: 2;
 }
 
 #tree {
@@ -70,6 +80,7 @@ p {
     bottom: 20px;
     left: 50%;
     width: 40%;
+    z-index: -1;
 }
 
 .basket {
@@ -77,19 +88,56 @@ p {
     position: fixed;
     bottom: 20px;
     left: 20%;
+    z-index: 3;
 }
 
 body {
-    background-image: url("../images/grass.png");
-    background-color: #baddeb;
-    background-attachment: fixed;
-    background-repeat: repeat-x;
-    background-position: bottom;
-    overflow: hidden;
+    width: 100%;
+    background: #baddeb;
+    transition: background 12s linear;
+    -webkit-animation: background 12s linear;
+    -moz-transition: background 12s linear;
+    z-index: -1;
 }
 
 /* My code */
 .tilted {
     transform: rotate(-20deg);
     /*counterclockwise tilt */
+}
+
+#grass-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    pointer-events: none;
+}
+
+#grass-container img {
+    height: auto;
+}
+
+#sky, #night {
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    width:100%;
+}
+
+#sky{
+    background:#baddeb;
+    z-index:-5;
+}
+
+#night{
+    background-color:#000000;
+    z-index:-5;
+    opacity:0;
 }

@@ -42,27 +42,37 @@ $(document).mousemove(function (e) {
     });
 });
 
-$(document).ready(function () {
-    $('#dayButtonId').click(function () {
-        $('body').css({
-            'background-color': '#baddeb'
-        });
-    });
+// $(document).ready(function () {
+//     $('#dayButtonId').click(function () {
+//         $('body').css({
+//             'background-color': '#baddeb'
+//         });
+//     });
 
-    $('#nightButtonId').click(function () {
-        $('body').css({
-            'background-color': '#364044'
-        });
-    });
+//     $('#nightButtonId').click(function () {
+//         $('body').css({
+//             'background-color': '#364044'
+//         });
+//     });
+// });
+
+const grassContainer = document.getElementById("grass-container");
+const grassImage = '<img src="images/grass.png" alt="grass" class="grass">';
+for (let i = 0; i < 10; i++) {
+    grassContainer.innerHTML += grassImage;
+}
+
+$('#sky').animate({'backgroundColor':'#806776'}, 18000);
+$('#night').animate({'opacity':0.8}, 20000);
+
+$(document).ready(function() {
+    $('#butterfly').delay(5000).fadeOut(1500);
+    $('#firefly').fadeOut(10).delay(5000).fadeIn(1500);
 });
 
 $(document).ready(function () {
-    $("#dayButtonId").click(function () {
-        $("body").animate({ 'background-color': '#baddeb' });
-    });
-    $("#nightButtonId").click(function () {
-        $("body").animate({ 'background-color': '#364044' });
-    });
+    flyAround("#firefly");
+    flyAway("#firefly");
 });
 
 // <Jan>
