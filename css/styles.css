@@ -95,7 +95,6 @@ body {
     width: 100%;
     background: #baddeb;
     transition: background 12s linear;
-    -webkit-animation: background 12s linear;
     -moz-transition: background 12s linear;
     z-index: -1;
 }
