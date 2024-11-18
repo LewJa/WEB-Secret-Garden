@@ -61,7 +61,7 @@ const grassImage = '<img src="images/grass.png" alt="grass" class="grass">';
 for (let i = 0; i < 10; i++) {
     grassContainer.innerHTML += grassImage;
 }
-
+/*
 $('#sky').animate({'backgroundColor':'#806776'}, 18000);
 $('#night').animate({'opacity':0.8}, 20000);
 
@@ -73,18 +73,19 @@ $(document).ready(function() {
 $(document).ready(function () {
     flyAround("#firefly");
     flyAway("#firefly");
-});
+});*/
 
 // <Jan>
 
 $(document).ready(function () {
     flyAround("#butterfly");
     flyAway("#butterfly");
+    dayNightCycle();
 });
 
 function flyAround(IdRef) {
-    var x = $(window).width() - $(IdRef).width();
-    var y = $(window).height() - $(IdRef).height();
+    var x = $(window).width() - $(IdRef).width() - $("#butterfly").width()/2;
+    var y = $(window).height() - $(IdRef).height() - $("#butterfly").height()/2;
 
     var maxX = Math.floor(Math.random() * x);
     var maxY = Math.floor(Math.random() * y);
@@ -94,6 +95,10 @@ function flyAround(IdRef) {
     $(IdRef).animate({ top: maxY, left: maxX }, "slow", function () {
         flyAround(IdRef);
     });
+
+    if (IdRef === "#butterfly" && $('#firefly-glow').is(':visible')) {
+        positionGlow(maxX, maxY);
+    }
 }
 
 function setDirection(IdRef, newX) {
@@ -134,4 +139,43 @@ function flyAway(IdRef) {
         }
     });
 }
+
+function dayNightCycle() {
+    var isDay = true;
+    $('#butterfly').attr('src', 'images/butterfly.png');
+    function switchCycle() {
+        if (isDay) {
+            $('#sky').animate({ 'backgroundColor': '#806776' }, 18000);
+            $('#night').animate({ 'opacity': 1 }, 20000, function() {
+                isDay = false;
+                switchCycle();
+            });
+            setTimeout(function() {
+                $('#butterfly').attr('src', 'images/firefly.png');
+                $('#firefly-glow').show();
+                positionGlow();
+            }, 15000);} 
+            else {
+            $('#sky').animate({ 'backgroundColor': '#baddeb' }, 18000);
+            $('#night').animate({ 'opacity': 0 }, 20000, function() {
+                isDay = true;
+                switchCycle();
+            });
+            setTimeout(function() {
+                $('#butterfly').attr('src', 'images/butterfly.png');
+                $('#firefly-glow').hide();
+            }, 15000);
+        }
+    }
+    switchCycle();
+}
+
+function positionGlow(maxX, maxY) {
+    var glow = $('#firefly-glow');
+    glow.animate({
+        top: maxY,
+        left: maxX
+    } , "slow");
+}
+
 // </Jan>

@@ -31,13 +31,6 @@ p {
     z-index: 9;
 }
 
-#firefly {
-    height: 15%;
-    width: auto;
-    position: absolute;
-    z-index: 10;
-}
-
 #wateringcan {
     width: 200px;
     position: fixed;
@@ -128,6 +121,7 @@ body {
     right:0px;
     bottom:0px;
     width:100%;
+    transition: background-color 18s linear;
 }
 
 #sky{
@@ -139,4 +133,16 @@ body {
     background-color:#000000;
     z-index:-5;
     opacity:0;
+    transition: opacity 20s linear;
+}
+
+#firefly-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 0.2;
+    display: none;
+    z-index: 8;
 }
