@@ -228,3 +228,14 @@ function setDirection(IdRef, newX) {
 //     });
 // }
 // </Jan>
+
+//Yelyzaveta
+$(function(){
+ $('#sun_yellow').animate({'top':'96%','opacity': 0.6}, 18000,function(){
+    $('#stars').animate({'opacity':1},5000, function(){
+        $('#moon').animate({'top':'20%','opacity':1},1500);
+    });
+ });
+});
+$('#clouds').animate({'backgroundPosition':'1000px 0px','opacity':0},30000);
+// $('#tree').animate({'backgroundColor':'#2f3339'},30000);

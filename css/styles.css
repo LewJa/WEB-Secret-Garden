@@ -104,7 +104,9 @@ body {
 }
 
 #sky,
-#night {
+#night,
+#clouds,
+#stars {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -123,3 +125,37 @@ body {
     z-index: -5;
     opacity: 0;
 }
+
+#sun_yellow{
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    background: transparent url(/images/sun1-removebg-preview.png) no-repeat center center;
+    z-index: -4;
+    width: 150px;
+    height: 155px;
+
+    
+}
+
+#clouds{
+    background: transparent url(/images/cloud-removebg-preview.png) repeat-x top left;
+    z-index: -2;
+}
+#stars{
+    
+    bottom: 100px;
+    background: transparent url(/images/stars-removebg-preview.png);
+    z-index: -3;
+    opacity: 0;
+} 
+#moon{
+     position: absolute;
+     left: 30%;
+     top: 10%;
+     width: 130px;
+     height: 130px;
+     background: transparent url(/images/moon_-removebg-preview.png) no-repeat center center;
+     z-index: -3;
+     opacity: 0;
+}  
