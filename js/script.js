@@ -42,11 +42,11 @@ $(document).mousemove(function (e) {
     });
 });
 
-const grassContainer = document.getElementById("grass-container");
-const grassImage = '<img src="images/grass.png" alt="grass" class="grass">';
-for (let i = 0; i < 10; i++) {
-    grassContainer.innerHTML += grassImage;
-}
+// const grassContainer = document.getElementById("grass-container");
+// const grassImage = '<img src="images/grass.png" alt="grass" class="grass">';
+// for (let i = 0; i < 10; i++) {
+//     grassContainer.innerHTML += grassImage;
+// }
 
 //changes the butterfly into a firefly after some time
 var paths = ["../images/butterfly.png", "../images/firefly.png"];
@@ -315,7 +315,7 @@ var timer7 = setInterval(function () {
     img7.src = paths7[g++];
 }, 9000);
 var paths8 = ["../images/grass.png", "../images/grass_dark.png"];
-var img8 = document.getElementById("grass");
+var img8 = document.getElementById("grass-container");
 var h = 0;
 var timer8 = setInterval(function () {
     if (h >= paths8.length) {
