@@ -53,7 +53,7 @@ var paths = ["../images/butterfly.png", "../images/firefly.png"];
 var img = document.getElementById("butterfly");
 var i = 0;
 var timer = setInterval(function () {
-    if(i >= paths.length){
+    if (i >= paths.length) {
         clearInterval(timer);
         return;
     }

@@ -2,27 +2,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
-/* 
-button {
-    padding: 10px 15px;
-    font-size: 16px;
-}
-
-p {
-    padding: 20px;
-    max-width: 200px;
-    margin: 20px auto;
-    border-radius: 5px;
-    border: 1px solid #2e573a;
-    background-color: #7ead8d;
-    color: black;
-    text-align: left;
-    margin-top: 20px;
-    z-index: 5;
-} */
 
 #butterfly {
     height: 15%;
@@ -121,22 +101,23 @@ body {
     height: auto;
 }
 
-#sky, #night {
-    position:absolute;
-    top:0px;
-    left:0px;
-    right:0px;
-    bottom:0px;
-    width:100%;
+#sky,
+#night {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
 }
 
-#sky{
-    background:#baddeb;
-    z-index:-5;
+#sky {
+    background: #baddeb;
+    z-index: -5;
 }
 
-#night{
-    background-color:#000000;
-    z-index:-5;
-    opacity:0;
+#night {
+    background-color: #2f3339;
+    z-index: -5;
+    opacity: 0;
 }
