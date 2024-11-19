@@ -47,7 +47,6 @@ const grassImage = '<img src="images/grass.png" alt="grass" class="grass">';
 for (let i = 0; i < 10; i++) {
     grassContainer.innerHTML += grassImage;
 }
-
 //changes the butterfly into a firefly after some time
 var paths = ["../images/butterfly.png", "../images/firefly.png"];
 var img = document.getElementById("butterfly");
@@ -313,14 +312,4 @@ var timer7 = setInterval(function () {
         return;
     }
     img7.src = paths7[g++];
-}, 9000);
-var paths8 = ["../images/grass.png", "../images/grass_dark.png"];
-var img8 = document.getElementById("grass");
-var h = 0;
-var timer8 = setInterval(function () {
-    if (h >= paths8.length) {
-        clearInterval(timer8);
-        return;
-    }
-    img8.src = paths8[h++];
 }, 9000);
