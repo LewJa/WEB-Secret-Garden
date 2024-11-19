@@ -281,3 +281,46 @@ var timer4 = setInterval(function () {
     }
     img4.src = paths4[d++];
 }, 9000);
+
+var paths5 = ["../images/apple.png", "../images/apple_dark.png"];
+var img5 = document.getElementById("apple1");
+var e = 0;
+var timer5 = setInterval(function () {
+    if (e >= paths5.length) {
+        clearInterval(timer5);
+        return;
+    }
+    img5.src = paths5[e++];
+}, 9000);
+
+var paths5 = ["../images/apple.png", "../images/apple_dark.png"];
+var img6 = document.getElementById("apple2");
+var f = 0;
+var timer6 = setInterval(function () {
+    if (f >= paths6.length) {
+        clearInterval(timer6);
+        return;
+    }
+    img6.src = paths6[f++];
+}, 9000);
+
+var paths7 = ["../images/apple.png", "../images/apple_dark.png"];
+var img7 = document.getElementById("apple3");
+var g = 0;
+var timer7 = setInterval(function () {
+    if (g >= paths7.length) {
+        clearInterval(timer7);
+        return;
+    }
+    img7.src = paths7[g++];
+}, 9000);
+var paths8 = ["../images/grass.png", "../images/grass_dark.png"];
+var img8 = document.getElementById("grass");
+var h = 0;
+var timer8 = setInterval(function () {
+    if (h >= paths8.length) {
+        clearInterval(timer8);
+        return;
+    }
+    img8.src = paths8[h++];
+}, 9000);
