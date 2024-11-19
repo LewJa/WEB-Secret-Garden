@@ -1,3 +1,39 @@
+$(document).ready(function () {
+    // Define the tree's crown boundary(approximately)
+    let treeCrown = {
+        top: 50, 
+        left: 750, 
+        width: 280,
+        height: 190,
+    };
+
+    // Randomly position applea inside the tree
+    $(".apple").each(function () {
+        let randomTop = treeCrown.top + Math.random() * treeCrown.height;
+        let randomLeft = treeCrown.left + Math.random() * treeCrown.width;
+
+        // Apply to apples
+        $(this).css({
+            position: "absolute",
+            top: randomTop + "px",
+            left: randomLeft + "px",
+        });
+    });
+     // Define the basket's position
+     let basketPosition = {
+        top: 470, 
+        left: 300,};
+    // put apples in the basket when clicked
+        $(".apple").on("click", function () {
+            $(this).css({
+                position: "absolute",
+                top: basketPosition.top + "px",
+                left: basketPosition.left + "px",
+            });
+        })
+     
+});
+
 // <Yelyzaveta>
 $("#wateringcan").on("click", function () {
     $(this).toggleClass("tilted");
@@ -312,3 +348,5 @@ var timer7 = setInterval(function () {
     }
     img7.src = paths7[g++];
 }, 9000);
+
+
