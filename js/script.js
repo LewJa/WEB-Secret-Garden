@@ -58,7 +58,7 @@ var timer = setInterval(function () {
         return;
     }
     img.src = paths[i++];
-}, 10000);
+}, 9000);
 
 //background color fades into darker one
 $('#sky').animate({ 'backgroundColor': '#806776' }, 18000);
@@ -238,4 +238,46 @@ $(function(){
  });
 });
 $('#clouds').animate({'backgroundPosition':'1000px 0px','opacity':0},30000);
-// $('#tree').animate({'backgroundColor':'#2f3339'},30000);
+var paths1 = ["../images/tree.png", "../images/tree_dark.png"];
+var img1 = document.getElementById("tree");
+var a = 0;
+var timer1 = setInterval(function () {
+    if (a >= paths1.length) {
+        clearInterval(timer1);
+        return;
+    }
+    img1.src = paths1[a++];
+}, 9000);
+
+var paths2 = ["../images/wateringcan.png", "../images/wateringcan_dark.png"];
+var img2 = document.getElementById("wateringcan");
+var b = 0;
+var timer2 = setInterval(function () {
+    if (b >= paths2.length) {
+        clearInterval(timer2);
+        return;
+    }
+    img2.src = paths2[b++];
+}, 9000);
+
+var paths3 = ["../images/basketfront.png", "../images/basketfront_dark.png"];
+var img3 = document.getElementById("basketfront");
+var c = 0;
+var timer3 = setInterval(function () {
+    if (c >= paths3.length) {
+        clearInterval(timer3);
+        return;
+    }
+    img3.src = paths3[c++];
+}, 9000);
+
+var paths4 = ["../images/basket.png", "../images/basket_dark.png"];
+var img4 = document.getElementById("basket");
+var d = 0;
+var timer4 = setInterval(function () {
+    if (d >= paths4.length) {
+        clearInterval(timer4);
+        return;
+    }
+    img4.src = paths4[d++];
+}, 9000);
