@@ -1,17 +1,19 @@
 // <Bianca>
 $(document).ready(function () {
-    // Define the tree's crown boundary(approximately)
+    // // Define the tree's crown boundary(approximately)
     let treeCrown = {
-        top: 50,
-        left: 750,
         width: 280,
         height: 190,
     };
+    var offset = $('#tree').offset();
+    console.dir(offset);
 
+     var x = $("#tree").offset().left;
+     var y = $("#tree").offset().top;
     // Randomly position applea inside the tree
     $(".apple").each(function () {
-        let randomTop = treeCrown.top + Math.random() * treeCrown.height;
-        let randomLeft = treeCrown.left + Math.random() * treeCrown.width;
+        let randomTop = y+90 + Math.random()*treeCrown.height;
+        let randomLeft = x+70 + Math.random()*treeCrown.width;
 
         // Apply to apples
         $(this).css({
