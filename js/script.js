@@ -2,8 +2,8 @@
 $(document).ready(function () {
     // Define the tree's crown boundary(approximately)
     let treeCrown = {
-        top: 50, 
-        left: 750, 
+        top: 50,
+        left: 750,
         width: 280,
         height: 190,
     };
@@ -20,19 +20,20 @@ $(document).ready(function () {
             left: randomLeft + "px",
         });
     });
-     // Define the basket's position
-     let basketPosition = {
-        top: 470, 
-        left: 300,};
+    // Define the basket's position
+    let basketPosition = {
+        top: 470,
+        left: 300,
+    };
     // put apples in the basket when clicked
-        $(".apple").on("click", function () {
-            $(this).css({
-                position: "absolute",
-                top: basketPosition.top + "px",
-                left: basketPosition.left + "px",
-            });
-        })
-     
+    $(".apple").on("click", function () {
+        $(this).css({
+            position: "absolute",
+            top: basketPosition.top + "px",
+            left: basketPosition.left + "px",
+        });
+    })
+
 });
 
 // <Yelyzaveta>
@@ -69,88 +70,88 @@ function createWaterDrop() {
     });
 }
 
-$(function(){
-    $('#sun_yellow').animate({'top':'96%','opacity': 0.6}, 18000,function(){
-       $('#stars').animate({'opacity':1},5000, function(){
-           $('#moon').animate({'top':'20%','opacity':1},1500);
-       });
+$(function () {
+    $('#sun_yellow').animate({ 'top': '96%', 'opacity': 0.6 }, 18000, function () {
+        $('#stars').animate({ 'opacity': 1 }, 5000, function () {
+            $('#moon').animate({ 'top': '20%', 'opacity': 1 }, 1500);
+        });
     });
-   });
-   $('#clouds').animate({'backgroundPosition':'1000px 0px','opacity':0},30000);
-   var paths1 = ["../images/tree.png", "../images/tree_dark.png"];
-   var img1 = document.getElementById("tree");
-   var a = 0;
-   var timer1 = setInterval(function () {
-       if (a >= paths1.length) {
-           clearInterval(timer1);
-           return;
-       }
-       img1.src = paths1[a++];
-   }, 9000);
-   
-   var paths2 = ["../images/wateringcan.png", "../images/wateringcan_dark.png"];
-   var img2 = document.getElementById("wateringcan");
-   var b = 0;
-   var timer2 = setInterval(function () {
-       if (b >= paths2.length) {
-           clearInterval(timer2);
-           return;
-       }
-       img2.src = paths2[b++];
-   }, 9000);
-   
-   var paths3 = ["../images/basketfront.png", "../images/basketfront_dark.png"];
-   var img3 = document.getElementById("basketfront");
-   var c = 0;
-   var timer3 = setInterval(function () {
-       if (c >= paths3.length) {
-           clearInterval(timer3);
-           return;
-       }
-       img3.src = paths3[c++];
-   }, 9000);
-   
-   var paths4 = ["../images/basket.png", "../images/basket_dark.png"];
-   var img4 = document.getElementById("basket");
-   var d = 0;
-   var timer4 = setInterval(function () {
-       if (d >= paths4.length) {
-           clearInterval(timer4);
-           return;
-       }
-       img4.src = paths4[d++];
-   }, 9000);
-   
-   var paths5 = ["../images/apple.png", "../images/apple_dark.png"];
-   var img5 = document.getElementById("apple1");
-   var e = 0;
-   var timer5 = setInterval(function () {
-       if (e >= paths5.length) {
-           clearInterval(timer5);
-           return;
-       }
-       img5.src = paths5[e++];
-   }, 9000);
-   
-   var img6 = document.getElementById("apple2");
-   var f = 0;
-   var timer6 = setInterval(function () {
-       if (f >= paths5.length) {
-           clearInterval(timer6);
-           return;
-       }
-       img6.src = paths5[f++];
-   }, 9000);
-   
-   var img7 = document.getElementById("apple3");
-   var g = 0;
-   var timer7 = setInterval(function () {
-       if (g >= paths5.length) {
-           clearInterval(timer7);
-           return;
-       }
-       img7.src = paths5[g++];
-   }, 9000);   
+});
+$('#clouds').animate({ 'backgroundPosition': '1000px 0px', 'opacity': 0 }, 30000);
+var paths1 = ["../images/tree.png", "../images/tree_dark.png"];
+var img1 = document.getElementById("tree");
+var a = 0;
+var timer1 = setInterval(function () {
+    if (a >= paths1.length) {
+        clearInterval(timer1);
+        return;
+    }
+    img1.src = paths1[a++];
+}, 9000);
+
+var paths2 = ["../images/wateringcan.png", "../images/wateringcan_dark.png"];
+var img2 = document.getElementById("wateringcan");
+var b = 0;
+var timer2 = setInterval(function () {
+    if (b >= paths2.length) {
+        clearInterval(timer2);
+        return;
+    }
+    img2.src = paths2[b++];
+}, 9000);
+
+var paths3 = ["../images/basketfront.png", "../images/basketfront_dark.png"];
+var img3 = document.getElementById("basketfront");
+var c = 0;
+var timer3 = setInterval(function () {
+    if (c >= paths3.length) {
+        clearInterval(timer3);
+        return;
+    }
+    img3.src = paths3[c++];
+}, 9000);
+
+var paths4 = ["../images/basket.png", "../images/basket_dark.png"];
+var img4 = document.getElementById("basket");
+var d = 0;
+var timer4 = setInterval(function () {
+    if (d >= paths4.length) {
+        clearInterval(timer4);
+        return;
+    }
+    img4.src = paths4[d++];
+}, 9000);
+
+var paths5 = ["../images/apple.png", "../images/apple_dark.png"];
+var img5 = document.getElementById("apple1");
+var e = 0;
+var timer5 = setInterval(function () {
+    if (e >= paths5.length) {
+        clearInterval(timer5);
+        return;
+    }
+    img5.src = paths5[e++];
+}, 9000);
+
+var img6 = document.getElementById("apple2");
+var f = 0;
+var timer6 = setInterval(function () {
+    if (f >= paths5.length) {
+        clearInterval(timer6);
+        return;
+    }
+    img6.src = paths5[f++];
+}, 9000);
+
+var img7 = document.getElementById("apple3");
+var g = 0;
+var timer7 = setInterval(function () {
+    if (g >= paths5.length) {
+        clearInterval(timer7);
+        return;
+    }
+    img7.src = paths5[g++];
+}, 9000);
 
 // <Teo>
 const grassContainer = document.getElementById("grass-container");
@@ -158,7 +159,7 @@ var paths8 = ["images/grass.png", "images/grass_dark.png"];
 let h = 0;
 for (let i = 0; i < 10; i++) {
     const img = document.createElement("img");
-    img.src = paths8[0]; 
+    img.src = paths8[0];
     img.alt = "grass";
     img.className = "grass";
     grassContainer.appendChild(img);
