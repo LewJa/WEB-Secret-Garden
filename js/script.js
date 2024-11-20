@@ -8,9 +8,9 @@ $(document).ready(function () {
     var offset = $('#tree').offset();
     console.dir(offset);
 
-     var x = $("#tree").offset().left;
-     var y = $("#tree").offset().top;
-    // Randomly position applea inside the tree
+    var x = $("#tree").offset().left;
+    var y = $("#tree").offset().top;
+    // Randomly position apple inside the tree
     $(".apple").each(function () {
         let randomTop = y+110 + Math.random()*treeCrown.height;
         let randomLeft = x+70 + Math.random()*treeCrown.width;
@@ -29,17 +29,17 @@ $(document).ready(function () {
     var offset = $('#basket').offset();
     console.dir(offset);
 
-     var x = $("#basket").offset().left;
-     var y = $("#basket").offset().top;
+    var x = $("#basket").offset().left;
+    var y = $("#basket").offset().top;
 
-     
+
     // put apples in the basket when clicked
     $(".apple").on("click", function () {
-        let basketTop = y+100;
+        let basketTop = y+80;
         let basketLeft = x + Math.random()*basket.width;
         $(this).css({
             position: "absolute",
-            top:basketTop +"px",
+            top: basketTop + "px",
             left: basketLeft + "px",
             
         });
