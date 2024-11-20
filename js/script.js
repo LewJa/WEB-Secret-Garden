@@ -35,7 +35,7 @@ $(document).ready(function () {
      
     // put apples in the basket when clicked
     $(".apple").on("click", function () {
-        let basketTop = y+80;
+        let basketTop = y+100;
         let basketLeft = x + Math.random()*basket.width;
         $(this).css({
             position: "absolute",
