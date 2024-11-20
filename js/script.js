@@ -12,7 +12,7 @@ $(document).ready(function () {
      var y = $("#tree").offset().top;
     // Randomly position applea inside the tree
     $(".apple").each(function () {
-        let randomTop = y+90 + Math.random()*treeCrown.height;
+        let randomTop = y+110 + Math.random()*treeCrown.height;
         let randomLeft = x+70 + Math.random()*treeCrown.width;
 
         // Apply to apples
@@ -41,9 +41,9 @@ $(document).ready(function () {
             position: "absolute",
             top:basketTop +"px",
             left: basketLeft + "px",
+            
         });
     })
-
 });
 
 // <Yelyzaveta>
