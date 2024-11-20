@@ -73,6 +73,10 @@ body {
     z-index: 1;
 }
 
+.basketfront {
+    z-index: 7;
+}
+
 body {
     width: 100%;
     background: #baddeb;
