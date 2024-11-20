@@ -1,3 +1,4 @@
+// <Bianca>
 $(document).ready(function () {
     // Define the tree's crown boundary(approximately)
     let treeCrown = {
@@ -68,16 +69,90 @@ function createWaterDrop() {
     });
 }
 
+$(function(){
+    $('#sun_yellow').animate({'top':'96%','opacity': 0.6}, 18000,function(){
+       $('#stars').animate({'opacity':1},5000, function(){
+           $('#moon').animate({'top':'20%','opacity':1},1500);
+       });
+    });
+   });
+   $('#clouds').animate({'backgroundPosition':'1000px 0px','opacity':0},30000);
+   var paths1 = ["../images/tree.png", "../images/tree_dark.png"];
+   var img1 = document.getElementById("tree");
+   var a = 0;
+   var timer1 = setInterval(function () {
+       if (a >= paths1.length) {
+           clearInterval(timer1);
+           return;
+       }
+       img1.src = paths1[a++];
+   }, 9000);
+   
+   var paths2 = ["../images/wateringcan.png", "../images/wateringcan_dark.png"];
+   var img2 = document.getElementById("wateringcan");
+   var b = 0;
+   var timer2 = setInterval(function () {
+       if (b >= paths2.length) {
+           clearInterval(timer2);
+           return;
+       }
+       img2.src = paths2[b++];
+   }, 9000);
+   
+   var paths3 = ["../images/basketfront.png", "../images/basketfront_dark.png"];
+   var img3 = document.getElementById("basketfront");
+   var c = 0;
+   var timer3 = setInterval(function () {
+       if (c >= paths3.length) {
+           clearInterval(timer3);
+           return;
+       }
+       img3.src = paths3[c++];
+   }, 9000);
+   
+   var paths4 = ["../images/basket.png", "../images/basket_dark.png"];
+   var img4 = document.getElementById("basket");
+   var d = 0;
+   var timer4 = setInterval(function () {
+       if (d >= paths4.length) {
+           clearInterval(timer4);
+           return;
+       }
+       img4.src = paths4[d++];
+   }, 9000);
+   
+   var paths5 = ["../images/apple.png", "../images/apple_dark.png"];
+   var img5 = document.getElementById("apple1");
+   var e = 0;
+   var timer5 = setInterval(function () {
+       if (e >= paths5.length) {
+           clearInterval(timer5);
+           return;
+       }
+       img5.src = paths5[e++];
+   }, 9000);
+   
+   var img6 = document.getElementById("apple2");
+   var f = 0;
+   var timer6 = setInterval(function () {
+       if (f >= paths5.length) {
+           clearInterval(timer6);
+           return;
+       }
+       img6.src = paths5[f++];
+   }, 9000);
+   
+   var img7 = document.getElementById("apple3");
+   var g = 0;
+   var timer7 = setInterval(function () {
+       if (g >= paths5.length) {
+           clearInterval(timer7);
+           return;
+       }
+       img7.src = paths5[g++];
+   }, 9000);   
 
 // <Teo>
-$(document).mousemove(function (e) {
-    setDirection("#follow", e.pageX); // Flips the net - Jan
-    $("#follow").offset({
-        left: e.pageX,
-        top: e.pageY
-    });
-});
-
 const grassContainer = document.getElementById("grass-container");
 var paths8 = ["images/grass.png", "images/grass_dark.png"];
 let h = 0;
@@ -222,19 +297,13 @@ $(document).ready(function () {
 });
 
 // <Jan>
-// function flyAround(IdRef) {
-//     var x = $(window).width() - $(IdRef).width();
-//     var y = $(window).height() - $(IdRef).height();
-
-//     var maxX = Math.floor(Math.random() * x);
-//     var maxY = Math.floor(Math.random() * y);
-
-//     setDirection(IdRef, maxX);
-
-//     $(IdRef).animate({ top: maxY, left: maxX }, "slow", function () {
-//         flyAround(IdRef);
-//     });
-// }
+$(document).mousemove(function (e) {
+    setDirection("#follow", e.pageX);
+    $("#follow").offset({
+        left: e.pageX,
+        top: e.pageY
+    });
+});
 
 function setDirection(IdRef, newX) {
     var currentX = $(IdRef).offset().left;
@@ -252,114 +321,3 @@ function setDirection(IdRef, newX) {
         }
     }
 }
-
-// function flyAway(IdRef) {
-//     $(document).mousemove(function (e) {
-//         var mouseX = e.pageX;
-//         var mouseY = e.pageY;
-//         var butterflyX = $(IdRef).offset().left + $(IdRef).width() / 2;
-//         var butterflyY = $(IdRef).offset().top + $(IdRef).height() / 2;
-//         var distance = Math.sqrt(Math.pow(mouseX - butterflyX, 2) + Math.pow(mouseY - butterflyY, 2));
-
-//         if (distance < 100) { // If mouse is within 100px
-//             var x = $(window).width() - $(IdRef).width();
-//             var y = $(window).height() - $(IdRef).height();
-
-//             var maxX = Math.floor(Math.random() * x);
-//             var maxY = Math.floor(Math.random() * y);
-
-//             setDirection(IdRef, maxX);
-
-//             $(IdRef).stop().animate({ top: maxY, left: maxX }, "fast", function () { flyAround(IdRef) });
-//         }
-//     });
-// }
-// </Jan>
-
-//Yelyzaveta
-$(function(){
- $('#sun_yellow').animate({'top':'96%','opacity': 0.6}, 18000,function(){
-    $('#stars').animate({'opacity':1},5000, function(){
-        $('#moon').animate({'top':'20%','opacity':1},1500);
-    });
- });
-});
-$('#clouds').animate({'backgroundPosition':'1000px 0px','opacity':0},30000);
-var paths1 = ["../images/tree.png", "../images/tree_dark.png"];
-var img1 = document.getElementById("tree");
-var a = 0;
-var timer1 = setInterval(function () {
-    if (a >= paths1.length) {
-        clearInterval(timer1);
-        return;
-    }
-    img1.src = paths1[a++];
-}, 9000);
-
-var paths2 = ["../images/wateringcan.png", "../images/wateringcan_dark.png"];
-var img2 = document.getElementById("wateringcan");
-var b = 0;
-var timer2 = setInterval(function () {
-    if (b >= paths2.length) {
-        clearInterval(timer2);
-        return;
-    }
-    img2.src = paths2[b++];
-}, 9000);
-
-var paths3 = ["../images/basketfront.png", "../images/basketfront_dark.png"];
-var img3 = document.getElementById("basketfront");
-var c = 0;
-var timer3 = setInterval(function () {
-    if (c >= paths3.length) {
-        clearInterval(timer3);
-        return;
-    }
-    img3.src = paths3[c++];
-}, 9000);
-
-var paths4 = ["../images/basket.png", "../images/basket_dark.png"];
-var img4 = document.getElementById("basket");
-var d = 0;
-var timer4 = setInterval(function () {
-    if (d >= paths4.length) {
-        clearInterval(timer4);
-        return;
-    }
-    img4.src = paths4[d++];
-}, 9000);
-
-var paths5 = ["../images/apple.png", "../images/apple_dark.png"];
-var img5 = document.getElementById("apple1");
-var e = 0;
-var timer5 = setInterval(function () {
-    if (e >= paths5.length) {
-        clearInterval(timer5);
-        return;
-    }
-    img5.src = paths5[e++];
-}, 9000);
-
-var paths5 = ["../images/apple.png", "../images/apple_dark.png"];
-var img6 = document.getElementById("apple2");
-var f = 0;
-var timer6 = setInterval(function () {
-    if (f >= paths6.length) {
-        clearInterval(timer6);
-        return;
-    }
-    img6.src = paths6[f++];
-}, 9000);
-
-var paths7 = ["../images/apple.png", "../images/apple_dark.png"];
-var img7 = document.getElementById("apple3");
-var g = 0;
-var timer7 = setInterval(function () {
-    if (g >= paths7.length) {
-        clearInterval(timer7);
-        return;
-    }
-    img7.src = paths7[g++];
-}, 9000);
-
-
