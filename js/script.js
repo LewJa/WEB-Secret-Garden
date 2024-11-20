@@ -23,16 +23,24 @@ $(document).ready(function () {
         });
     });
     // Define the basket's position
-    let basketPosition = {
-        top: 470,
-        left: 300,
+    let basket = {
+        width: 80,
     };
+    var offset = $('#basket').offset();
+    console.dir(offset);
+
+     var x = $("#basket").offset().left;
+     var y = $("#basket").offset().top;
+
+     
     // put apples in the basket when clicked
     $(".apple").on("click", function () {
+        let basketTop = y+80;
+        let basketLeft = x + Math.random()*basket.width;
         $(this).css({
             position: "absolute",
-            top: basketPosition.top + "px",
-            left: basketPosition.left + "px",
+            top:basketTop +"px",
+            left: basketLeft + "px",
         });
     })
 
