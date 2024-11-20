@@ -77,11 +77,24 @@ $(document).mousemove(function (e) {
         top: e.pageY
     });
 });
+
 const grassContainer = document.getElementById("grass-container");
-const grassImage = '<img src="images/grass.png" alt="grass" class="grass">';
+var paths8 = ["images/grass.png", "images/grass_dark.png"];
+let h = 0;
 for (let i = 0; i < 10; i++) {
-    grassContainer.innerHTML += grassImage;
+    const img = document.createElement("img");
+    img.src = paths8[0]; 
+    img.alt = "grass";
+    img.className = "grass";
+    grassContainer.appendChild(img);
 }
+
+setTimeout(function () {
+    document.querySelectorAll("#grass-container img").forEach((img) => {
+        img.src = paths8[1];
+    });
+}, 18000);
+
 //changes the butterfly into a firefly after some time
 var paths = ["../images/butterfly.png", "../images/firefly.png"];
 var img = document.getElementById("butterfly");

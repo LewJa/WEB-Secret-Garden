@@ -101,6 +101,7 @@ body {
 
 #grass-container img {
     height: auto;
+    margin-right: 0;
 }
 
 #sky,
@@ -126,7 +127,7 @@ body {
     opacity: 0;
 }
 
-#sun_yellow{
+#sun_yellow {
     position: absolute;
     left: 30%;
     top: 10%;
@@ -134,28 +135,28 @@ body {
     z-index: -4;
     width: 150px;
     height: 155px;
-
-    
 }
 
-#clouds{
+#clouds {
     background: transparent url(/images/cloud-removebg-preview.png) repeat-x top left;
     z-index: -2;
 }
-#stars{
-    
+
+#stars {
+
     bottom: 100px;
     background: transparent url(/images/stars-removebg-preview.png);
     z-index: -3;
     opacity: 0;
-} 
-#moon{
-     position: absolute;
-     left: 30%;
-     top: 10%;
-     width: 130px;
-     height: 130px;
-     background: transparent url(/images/moon_-removebg-preview.png) no-repeat center center;
-     z-index: -3;
-     opacity: 0;
-}  
+}
+
+#moon {
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    width: 130px;
+    height: 130px;
+    background: transparent url(/images/moon_-removebg-preview.png) no-repeat center center;
+    z-index: -3;
+    opacity: 0;
+}
