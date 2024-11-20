@@ -32,6 +32,19 @@ $(document).ready(function () {
     var x = $("#basket").offset().left;
     var y = $("#basket").offset().top;
 
+    // //shake effect
+    // jQuery.fn.shake = function(interval,distance,times){
+    //     interval = typeof interval == "undefined" ? 100 : interval;
+    //     distance = typeof distance == "undefined" ? 10 : distance;
+    //     times = typeof times == "undefined" ? 3 : times;
+    //     var jTarget = $(this);
+    //     jTarget.css('position','relative');
+    //     for(var iter=0;iter<(times+1);iter++){
+    //        jTarget.animate({ left: ((iter%2==0 ? distance : distance*-1))}, interval);
+    //     }
+    //     return jTarget.animate({ left: 0},interval);
+    //  }
+    //  $(".apples").shake();
 
     // put apples in the basket when clicked
     $(".apple").on("click", function () {
@@ -41,7 +54,6 @@ $(document).ready(function () {
             position: "absolute",
             top: basketTop + "px",
             left: basketLeft + "px",
-            
         });
     })
 });
