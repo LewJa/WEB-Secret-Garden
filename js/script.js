@@ -2,7 +2,7 @@
 $(document).ready(function () {
     // // Define the tree's crown boundary(approximately)
     let treeCrown = {
-        width: 280,
+        width: 300,
         height: 190,
     };
     var offset = $('#tree').offset();
