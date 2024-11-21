@@ -8,12 +8,12 @@ $(document).ready(function () {
     var offset = $('#tree').offset();
     console.dir(offset);
 
-     var x = $("#tree").offset().left;
-     var y = $("#tree").offset().top;
+    var x = $("#tree").offset().left;
+    var y = $("#tree").offset().top;
     // Randomly position applea inside the tree
     $(".apple").each(function () {
-        let randomTop = y+80 + Math.random()*treeCrown.height;
-        let randomLeft = x+70 + Math.random()*treeCrown.width;
+        let randomTop = y + 80 + Math.random() * treeCrown.height;
+        let randomLeft = x + 70 + Math.random() * treeCrown.width;
 
         // Apply to apples
         $(this).css({
@@ -29,18 +29,30 @@ $(document).ready(function () {
     var offset = $('#basket').offset();
     console.dir(offset);
 
-     var x = $("#basket").offset().left;
-     var y = $("#basket").offset().top;
+    var x = $("#basket").offset().left;
+    var y = $("#basket").offset().top;
     $(".apple").on("click", function () {
-        let basketTop = y+120;
-        let basketLeft = x + Math.random()*basket.width;
+        let basketTop = y + 120;
+        let basketLeft = x + Math.random() * basket.width;
         $(this).animate({
             position: "absolute",
             top: basketTop + "px",
             left: basketLeft + "px",
-            
+
         });
     })
+    
+    //changes the butterfly into a firefly after some time
+    var paths = ["../images/butterfly.png", "../images/firefly.png"];
+    var img = document.getElementById("butterfly");
+    var i = 0;
+    var timer = setInterval(function () {
+        if (i >= paths.length) {
+            clearInterval(timer);
+            return;
+        }
+        img.src = paths[i++];
+    }, 9000);
 });
 
 // <Yelyzaveta>
@@ -177,18 +189,6 @@ setTimeout(function () {
         img.src = paths8[1];
     });
 }, 18000);
-
-//changes the butterfly into a firefly after some time
-var paths = ["../images/butterfly.png", "../images/firefly.png"];
-var img = document.getElementById("butterfly");
-var i = 0;
-var timer = setInterval(function () {
-    if (i >= paths.length) {
-        clearInterval(timer);
-        return;
-    }
-    img.src = paths[i++];
-}, 9000);
 
 //background color fades into darker one
 $('#sky').animate({ 'backgroundColor': '#806776' }, 18000);

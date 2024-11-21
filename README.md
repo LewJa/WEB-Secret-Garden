@@ -1,6 +1,5 @@
 # WEB-Secret-Garden
-Good luck team!
-Jan - butterfly
-Yelyzaveta - watercan and waterdrop
-Teo - net + (extra)add day/night cycle
-Bianca - apple
+Jan - net + net direction
+Yelyzaveta - watercan and waterdrop + added sun and moon to daynight cycle
+Teo - butterfly movement + daynight cycle
+Bianca - apples + butterfly-firefly morph
