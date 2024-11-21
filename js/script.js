@@ -32,7 +32,7 @@ $(document).ready(function () {
      var x = $("#basket").offset().left;
      var y = $("#basket").offset().top;
     $(".apple").on("click", function () {
-        let basketTop = y+100;
+        let basketTop = y+120;
         let basketLeft = x + Math.random()*basket.width;
         $(this).animate({
             position: "absolute",
